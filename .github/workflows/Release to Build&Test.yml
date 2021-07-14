@@ -12,9 +12,6 @@ jobs:
   Deploy_to_DEV_QA:
     runs-on: windows-latest
     env:
-      USERNAME: admin@M365x639218.onmicrosoft.com
-      APPID: 41098e32-fccf-4145-b353-f40f2a917b16
-      TENANT_ID: c1d0b961-f301-4256-b2ec-6e9efa04d80b
       RUNNER_DEBUG: 1
 
     steps:
@@ -33,9 +30,9 @@ jobs:
       uses: microsoft/powerplatform-actions/backup-environment@v0
       with:
         environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
-        app-id: ${{ env.APPID }}
+        app-id: ${{ secrets.APPID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
-        tenant-id: ${{ env.TENANT_ID }}
+        tenant-id: ${{ secrets.TENANT_ID }}
         backup-label: Backup_before_deploy
 
 
@@ -43,9 +40,9 @@ jobs:
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
-        app-id: ${{ env.APPID }}
+        app-id: ${{ secrets.APPID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
-        tenant-id: ${{ env.TENANT_ID }}
+        tenant-id: ${{ secrets.TENANT_ID }}
         solution-file: out/solutions/CICDSolution.zip
         force-overwrite: true
         publish-changes: true
@@ -54,9 +51,9 @@ jobs:
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
-        app-id: ${{ env.APPID }}
+        app-id: ${{ secrets.APPID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
-        tenant-id: ${{ env.TENANT_ID }}
+        tenant-id: ${{ secrets.TENANT_ID }}
         solution-file: out/solutions/CICDSolution.zip
         force-overwrite: true
         publish-changes: true
