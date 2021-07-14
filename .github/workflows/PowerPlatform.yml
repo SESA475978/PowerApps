@@ -41,7 +41,14 @@ jobs:
         solution-file: out/exported/CICDSolution.zip
         solution-folder: out/solutions/CICDSolution
         solution-type: 'Unmanaged'
-        overwrite-files: false
+        overwrite-files: true
+        
+    - name: Check-solution action
+      uses: microsoft/powerplatform-actions/check-solution@v0
+      with:
+        user-name: 'admin@M365x639218.onmicrosoft.com'
+        password-secret: ${{ secrets.password }}
+        path: out/solutions/CICDSolution.zip
         
     - name: Branch-solution, prepare it for a PullRequest
       uses: microsoft/powerplatform-actions/branch-solution@v0
