@@ -46,14 +46,7 @@ jobs:
         solution-folder: out/solutions/CICDSolution
         solution-type: 'Unmanaged'
         overwrite-files: true
-        
-    - name: Pack solution
-      uses: microsoft/powerplatform-actions/pack-solution@v0
-      with:
-        solution-folder: solutions/CICDSolution
-        solution-file: out/solutions/CICDSolution.zip
-        solution-type: Unmanaged
-        
+              
     - name: Branch-solution, prepare it for a PullRequest
       uses: microsoft/powerplatform-actions/branch-solution@v0
       with:
