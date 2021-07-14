@@ -41,7 +41,7 @@ jobs:
         environment-url: 'https://org8afc7726.crm.dynamics.com/'
         user-name: 'admin@M365x639218.onmicrosoft.com'
         password-secret: ${{ secrets.password }}
-        path: out/solutions/CICDSolution
+        path: out/exported/CICDSolution.zip
         
     - name: Un-pack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v0
