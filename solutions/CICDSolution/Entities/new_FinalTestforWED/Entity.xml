@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Name LocalizedName="Fork" OriginalName="Fork">new_Fork</Name>
+  <Name LocalizedName="Final Test for WED" OriginalName="Final Test for WED">new_FinalTestforWED</Name>
   <EntityInfo>
-    <entity Name="new_Fork">
+    <entity Name="new_FinalTestforWED">
       <LocalizedNames>
-        <LocalizedName description="Fork" languagecode="1033" />
+        <LocalizedName description="Final Test for WED" languagecode="1033" />
       </LocalizedNames>
       <LocalizedCollectionNames>
-        <LocalizedCollectionName description="Forks" languagecode="1033" />
+        <LocalizedCollectionName description="Final Test for WEDS" languagecode="1033" />
       </LocalizedCollectionNames>
       <Descriptions>
         <Description description="" languagecode="1033" />
@@ -289,10 +289,10 @@
             <Description description="Unique identifier of the delegate user who modified the record." languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="new_ForkId">
+        <attribute PhysicalName="new_FinalTestforWEDId">
           <Type>primarykey</Type>
-          <Name>new_forkid</Name>
-          <LogicalName>new_forkid</LogicalName>
+          <Name>new_finaltestforwedid</Name>
+          <LogicalName>new_finaltestforwedid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
           <ImeMode>auto</ImeMode>
@@ -320,7 +320,7 @@
           <IsRetrievable>1</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
           <displaynames>
-            <displayname description="Fork" languagecode="1033" />
+            <displayname description="Final Test for WED" languagecode="1033" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier for entity instances" languagecode="1033" />
@@ -594,7 +594,7 @@
           <IsFilterable>1</IsFilterable>
           <IsRetrievable>0</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
-          <optionset Name="new_fork_statecode">
+          <optionset Name="new_finaltestforwed_statecode">
             <OptionSetType>state</OptionSetType>
             <IntroducedVersion>1.0</IntroducedVersion>
             <IsCustomizable>1</IsCustomizable>
@@ -602,7 +602,7 @@
               <displayname description="Status" languagecode="1033" />
             </displaynames>
             <Descriptions>
-              <Description description="Status of the Fork" languagecode="1033" />
+              <Description description="Status of the Final Test for WED" languagecode="1033" />
             </Descriptions>
             <states>
               <state value="0" defaultstatus="1" invariantname="Active">
@@ -621,7 +621,7 @@
             <displayname description="Status" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="Status of the Fork" languagecode="1033" />
+            <Description description="Status of the Final Test for WED" languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="statuscode">
@@ -654,7 +654,7 @@
           <IsFilterable>0</IsFilterable>
           <IsRetrievable>0</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
-          <optionset Name="new_fork_statuscode">
+          <optionset Name="new_finaltestforwed_statuscode">
             <OptionSetType>status</OptionSetType>
             <IntroducedVersion>1.0</IntroducedVersion>
             <IsCustomizable>1</IsCustomizable>
@@ -662,7 +662,7 @@
               <displayname description="Status Reason" languagecode="1033" />
             </displaynames>
             <Descriptions>
-              <Description description="Reason for the status of the Fork" languagecode="1033" />
+              <Description description="Reason for the status of the Final Test for WED" languagecode="1033" />
             </Descriptions>
             <statuses>
               <status value="1" state="0">
@@ -681,7 +681,7 @@
             <displayname description="Status Reason" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="Reason for the status of the Fork" languagecode="1033" />
+            <Description description="Reason for the status of the Final Test for WED" languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="TimeZoneRuleVersionNumber">
@@ -763,7 +763,7 @@
           </Descriptions>
         </attribute>
       </attributes>
-      <EntitySetName>new_forks</EntitySetName>
+      <EntitySetName>new_finaltestforweds</EntitySetName>
       <IsDuplicateCheckSupported>1</IsDuplicateCheckSupported>
       <IsBusinessProcessEnabled>0</IsBusinessProcessEnabled>
       <IsRequiredOffline>0</IsRequiredOffline>
