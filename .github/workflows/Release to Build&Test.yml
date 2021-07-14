@@ -9,7 +9,7 @@ on:
     branches: [ main ]
 
 jobs:
-  Release_to_DEV_QA:
+  Deploy_to_DEV_QA:
     runs-on: windows-latest
     env:
       RUNNER_DEBUG: 1
