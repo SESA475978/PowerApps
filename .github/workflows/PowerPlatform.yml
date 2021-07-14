@@ -47,14 +47,6 @@ jobs:
         solution-type: 'Unmanaged'
         overwrite-files: true
         
-    - name: Branch-solution, prepare it for a PullRequest
-      uses: microsoft/powerplatform-actions/branch-solution@v0
-      with:
-        solution-folder: out/solutions/CICDSolution
-        solution-target-folder: solutions/CICDSolution
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        allow-empty-commit: true
-        
     - name: Pack solution
       uses: microsoft/powerplatform-actions/pack-solution@v0
       with:
