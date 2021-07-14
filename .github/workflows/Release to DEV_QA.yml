@@ -26,7 +26,7 @@ jobs:
         solution-file: out/solutions/CICDSolution.zip
         solution-type: Unmanaged
 
-    - name: Import solution as unmanaged to build env
+    - name: Import solution as unmanaged to Development
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
@@ -36,7 +36,7 @@ jobs:
         force-overwrite: true
         publish-changes: true
         
-    - name: Import solution as unmanaged to build env
+    - name: Import solution as unmanaged to Quality
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
