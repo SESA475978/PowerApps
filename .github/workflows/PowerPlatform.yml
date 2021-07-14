@@ -42,3 +42,11 @@ jobs:
         solution-folder: out/solutions/CICDSolution
         solution-type: 'Unmanaged'
         overwrite-files: false
+        
+    - name: Branch-solution, prepare it for a PullRequest
+      uses: microsoft/powerplatform-actions/branch-solution@v0
+      with:
+        solution-folder: out/solutions/Ghosh
+        solution-target-folder: solutions/Ghosh
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        allow-empty-commit: true
