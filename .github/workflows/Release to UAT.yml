@@ -5,8 +5,6 @@ name: Release-solution-to-Pre-Production
 
 on:
   workflow_dispatch:
-  release:
-    types: [created]
 
 jobs:
   convert-to-managed:
@@ -35,7 +33,7 @@ jobs:
         name: managedSolutions
         path: out/ship/CICDSolution.zip
 
-  Release-to-staging:
+  Release-to-PreProduction:
     needs: [ convert-to-managed ]
     runs-on: windows-latest
     env:
@@ -61,3 +59,4 @@ jobs:
         solution-file: out/release/CICDSolution.zip
         force-overwrite: true
         publish-changes: true
+ 
