@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Power_Platform_CI_CD:
+  Commit_Changes:
     runs-on: windows-latest
     env:
       RUNNER_DEBUG: 1
