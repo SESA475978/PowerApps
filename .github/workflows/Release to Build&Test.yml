@@ -43,8 +43,9 @@ jobs:
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
-        user-name: ${{ env.USERNAME }}
-        password-secret: ${{ secrets.password }}
+        app-id: ${{ env.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ env.TENANT_ID }}
         solution-file: out/solutions/CICDSolution.zip
         force-overwrite: true
         publish-changes: true
@@ -53,8 +54,9 @@ jobs:
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
-        user-name: 'admin@M365x639218.onmicrosoft.com'
-        password-secret: ${{ secrets.password }}
+        app-id: ${{ env.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ env.TENANT_ID }}
         solution-file: out/solutions/CICDSolution.zip
         force-overwrite: true
         publish-changes: true
