@@ -25,6 +25,14 @@ jobs:
         solution-folder: solutions/CICDSolution
         solution-file: out/solutions/CICDSolution.zip
         solution-type: Unmanaged
+        
+    - name: Backup Development
+      uses: microsoft/powerplatform-actions/import-solution@v0
+      with:
+        environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
+        user-name: 'admin@M365x639218.onmicrosoft.com'
+        password-secret: ${{ secrets.password }}
+
 
     - name: Import solution as unmanaged to Development
       uses: microsoft/powerplatform-actions/import-solution@v0
