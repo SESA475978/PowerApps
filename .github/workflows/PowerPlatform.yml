@@ -54,22 +54,10 @@ jobs:
         solution-file: out/solutions/CICDSolution.zip
         solution-type: Unmanaged
         
-    - name: Import solution as unmanaged to Development
-      uses: microsoft/powerplatform-actions/import-solution@v0
+    - name: Branch-solution, prepare it for a PullRequest
+      uses: microsoft/powerplatform-actions/branch-solution@v0
       with:
-        environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
-        user-name: 'admin@M365x639218.onmicrosoft.com'
-        password-secret: ${{ secrets.password }}
-        solution-file: out/solutions/CICDSolution.zip
-        force-overwrite: true
-        publish-changes: true
-        
-    - name: Import solution as unmanaged to Quality
-      uses: microsoft/powerplatform-actions/import-solution@v0
-      with:
-        environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
-        user-name: 'admin@M365x639218.onmicrosoft.com'
-        password-secret: ${{ secrets.password }}
-        solution-file: out/solutions/CICDSolution.zip
-        force-overwrite: true
-        publish-changes: true
+        solution-folder: out/solutions/CICDSolution
+        solution-target-folder: solutions/CICDSolution
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        allow-empty-commit: true
