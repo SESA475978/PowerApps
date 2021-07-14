@@ -27,7 +27,7 @@ jobs:
         solution-type: Unmanaged
         
     - name: Backup Development
-      uses: microsoft/powerplatform-actions/import-solution@v0
+      uses: microsoft/powerplatform-actions/backup-environment@v0
       with:
         environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
         user-name: 'admin@M365x639218.onmicrosoft.com'
