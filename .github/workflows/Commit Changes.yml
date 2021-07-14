@@ -19,15 +19,17 @@ jobs:
       uses: microsoft/powerplatform-actions/who-am-i@v0
       with:
         environment-url: 'https://org8afc7726.crm.dynamics.com/'
-        user-name: 'admin@M365x639218.onmicrosoft.com'
-        password-secret: ${{ secrets.password }}
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
         
     - name: Export-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
         environment-url: 'https://org8afc7726.crm.dynamics.com/'
-        user-name: 'admin@M365x639218.onmicrosoft.com'
-        password-secret: ${{ secrets.password }}
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
         solution-name: CICDSolution
         solution-output-file: out/exported/CICDSolution.zip
                                     
@@ -35,8 +37,9 @@ jobs:
       uses: microsoft/powerplatform-actions/check-solution@v0
       with:
         environment-url: 'https://org8afc7726.crm.dynamics.com/'
-        user-name: 'admin@M365x639218.onmicrosoft.com'
-        password-secret: ${{ secrets.password }}
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
         path: out/exported/CICDSolution.zip
         
     - name: Un-pack-solution action
