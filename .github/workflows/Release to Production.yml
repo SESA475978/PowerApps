@@ -49,6 +49,15 @@ jobs:
       with:
         name: managedSolutions
         path: out/release/
+        
+    - name: Backup Development
+      uses: microsoft/powerplatform-actions/backup-environment@v0
+      with:
+        environment-url: 'https://orgec450a34.crm4.dynamics.com/'
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
+        backup-label: Backup_before_deploy
 
     - name: Import solution to Production
       uses: microsoft/powerplatform-actions/import-solution@v0
