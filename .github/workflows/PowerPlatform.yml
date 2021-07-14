@@ -2,10 +2,6 @@ name: Power Platform CI/CD
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   Power_Platform_CI_CD:
