@@ -23,6 +23,15 @@ jobs:
         client-secret: ${{ secrets.CLIENT_SECRET }}
         tenant-id: ${{ secrets.TENANT_ID }}
         
+    - name: Publish Solution action
+      uses: microsoft/powerplatform-actions/publish-solution@v0
+      with:
+        environment-url: 'https://org8afc7726.crm.dynamics.com/'
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
+        solution-name: CICDSolution
+        
     - name: Export-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
