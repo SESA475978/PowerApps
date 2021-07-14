@@ -81,6 +81,7 @@
     </Publisher>
     <RootComponents>
       <RootComponent type="1" schemaName="new_democicd" behavior="0" />
+      <RootComponent type="1" schemaName="new_finaltestforwed" behavior="0" />
       <RootComponent type="1" schemaName="new_fork" behavior="0" />
       <RootComponent type="1" schemaName="new_ghosh" behavior="0" />
       <RootComponent type="300" schemaName="new_cicd_d7690" behavior="0" />
