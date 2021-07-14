@@ -8,7 +8,7 @@ on:
     branches: [ main ]
 
 jobs:
-  Backup_Environment:
+  Power_Platform_CI_CD:
     runs-on: windows-latest
     env:
       RUNNER_DEBUG: 1
@@ -17,11 +17,11 @@ jobs:
     - uses: actions/checkout@v2
       with:
         lfs: true
-
-    - name: backup-environment action
-      uses: microsoft/powerplatform-actions/backup-environment@v0
+        
+        
+    - name: Who-am-i action
+      uses: microsoft/powerplatform-actions/who-am-i@v0
       with:
-        environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
+        environment-url: 'https://org8afc7726.crm.dynamics.com/'
         user-name: 'admin@M365x639218.onmicrosoft.com'
         password-secret: ${{ secrets.password }}
-        backup-label: Backup_Git
