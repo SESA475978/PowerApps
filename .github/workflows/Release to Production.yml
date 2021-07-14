@@ -54,7 +54,7 @@ jobs:
     - name: Import solution to Production
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
-        environment-url: 'https://orgec450a34.crm4.dynamics.com//'
+        environment-url: 'https://orgec450a34.crm4.dynamics.com/'
         user-name: ${{ secrets.USERNAME }}
         password-secret: ${{ secrets.password }}
         solution-file: out/release/CICDSolution.zip
