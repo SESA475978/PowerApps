@@ -48,7 +48,7 @@ jobs:
       with:
         user-name: 'admin@M365x639218.onmicrosoft.com'
         password-secret: ${{ secrets.password }}
-        path: out/solutions/CICDSolution.zip
+        path: out/solutions/CICDSolution
         
     - name: Branch-solution, prepare it for a PullRequest
       uses: microsoft/powerplatform-actions/branch-solution@v0
