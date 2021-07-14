@@ -1,4 +1,4 @@
-name: Power Platform CI/CD
+name: Commit Changes to GitHub
 
 on:
   workflow_dispatch:
