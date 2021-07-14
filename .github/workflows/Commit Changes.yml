@@ -55,6 +55,13 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         allow-empty-commit: true
         
+    - name: Pack solution
+      uses: microsoft/powerplatform-actions/pack-solution@v0
+      with:
+        solution-folder: solutions/CICDSolution
+        solution-file: out/solutions/CICDSolution.zip
+        solution-type: Unmanaged
+        
     - name: Import solution as unmanaged to Development
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
