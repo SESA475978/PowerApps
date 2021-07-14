@@ -49,16 +49,6 @@ jobs:
         password-secret: ${{ secrets.password }}
         path: out/exported/CICDSolution.zip
         
-    - name: Update solution version action
-      uses: microsoft/powerplatform-actions/update-solution-version@v0
-      with:
-        patch-version: 0.0.1
-        Description: 'Patch version for solution'
-        #environment-url: 'https://org8afc7726.crm.dynamics.com/'
-        #user-name: ${{ secrets.USERNAME }}
-        #password-secret: ${{ secrets.password }}
-        #path: out/exported/CICDSolution.zip
-        
     - name: Un-pack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v0
       with:
