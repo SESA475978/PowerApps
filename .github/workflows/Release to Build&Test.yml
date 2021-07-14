@@ -47,6 +47,15 @@ jobs:
         force-overwrite: true
         publish-changes: true
         
+    - name: Backup QA
+      uses: microsoft/powerplatform-actions/backup-environment@v0
+      with:
+        environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
+        backup-label: Backup_before_deploy
+        
     - name: Import solution as unmanaged to Quality
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
