@@ -46,7 +46,6 @@ jobs:
       with:
         environment-url: 'https://org8afc7726.crm.dynamics.com/'
         user-name: App-M365x639218.onm_41098e32-fccf-4145-b353-f40f2a917b16@0750d9
-        app-id: ${{ secrets.APPID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
         tenant-id: ${{ secrets.TENANT_ID }}
         path: out/exported/CICDSolution.zip
