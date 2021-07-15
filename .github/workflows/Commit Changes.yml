@@ -45,7 +45,7 @@ jobs:
       uses: microsoft/powerplatform-actions/check-solution@v0
       with:
         environment-url: 'https://org8afc7726.crm.dynamics.com/'
-        app-id: ${{ secrets.APPID }}
+        app-id: 41098e32-fccf-4145-b353-f40f2a917b16
         client-secret: ${{ secrets.CLIENT_SECRET }}
         tenant-id: ${{ secrets.TENANT_ID }}
         path: out/exported/CICDSolution.zip
