@@ -51,9 +51,9 @@ jobs:
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
-        app-id: ${{ secrets.APPID }}
-        client-secret: ${{ secrets.CLIENT_SECRET }}
-        tenant-id: ${{ secrets.TENANT_ID }}
+        user-name: ${{ secrets.USERNAME }}
+        password-secret: ${{ secrets.password }}
+        solution-file: out/solutions/CICDSolution.zip
         solution-name: CICDSolution
         
   #  - name: Backup QA
