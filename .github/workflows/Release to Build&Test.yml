@@ -26,14 +26,14 @@ jobs:
         solution-file: out/solutions/CICDSolution.zip
         solution-type: Unmanaged
         
-    - name: Backup Development
-      uses: microsoft/powerplatform-actions/backup-environment@v0
-      with:
-        environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
-        app-id: ${{ secrets.APPID }}
-        client-secret: ${{ secrets.CLIENT_SECRET }}
-        tenant-id: ${{ secrets.TENANT_ID }}
-        backup-label: Backup_before_deploy
+   # - name: Backup Development
+    #  uses: microsoft/powerplatform-actions/backup-environment@v0
+     # with:
+     #   environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
+     #   app-id: ${{ secrets.APPID }}
+    #    client-secret: ${{ secrets.CLIENT_SECRET }}
+     #   tenant-id: ${{ secrets.TENANT_ID }}
+    #    backup-label: Backup_before_deploy
 
 
     - name: Import solution as unmanaged to Development
@@ -47,22 +47,31 @@ jobs:
         force-overwrite: true
         publish-changes: true
         
-    - name: Backup QA
-      uses: microsoft/powerplatform-actions/backup-environment@v0
-      with:
-        environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
-        app-id: ${{ secrets.APPID }}
-        client-secret: ${{ secrets.CLIENT_SECRET }}
-        tenant-id: ${{ secrets.TENANT_ID }}
-        backup-label: Backup_before_deploy
-        
-    - name: Import solution as unmanaged to Quality
+    - name: upgrade-solution Development
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
-        environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
+        environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
         app-id: ${{ secrets.APPID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
         tenant-id: ${{ secrets.TENANT_ID }}
-        solution-file: out/solutions/CICDSolution.zip
-        force-overwrite: true
-        publish-changes: true
+        solution-name: CICDSolution
+        
+  #  - name: Backup QA
+    #  uses: microsoft/powerplatform-actions/backup-environment@v0
+    #  with:
+    #    environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
+    #    app-id: ${{ secrets.APPID }}
+    #    client-secret: ${{ secrets.CLIENT_SECRET }}
+   #     tenant-id: ${{ secrets.TENANT_ID }}
+   #     backup-label: Backup_before_deploy
+        
+  #  - name: Import solution as unmanaged to Quality
+   #   uses: microsoft/powerplatform-actions/import-solution@v0
+   #   with:
+     #   environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
+     #   app-id: ${{ secrets.APPID }}
+     #   client-secret: ${{ secrets.CLIENT_SECRET }}
+     #   tenant-id: ${{ secrets.TENANT_ID }}
+     #   solution-file: out/solutions/CICDSolution.zip
+     #   force-overwrite: true
+     #   publish-changes: true
