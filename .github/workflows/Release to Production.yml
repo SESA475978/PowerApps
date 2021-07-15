@@ -31,7 +31,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: managedSolutions
-        path: out/ship/CICDSolution_managed.zip
+        path: out/ship/CICDSolution.zip
 
   Release-to-PreProduction:
     needs: [ convert-to-managed ]
@@ -65,7 +65,7 @@ jobs:
         environment-url: 'https://orgec450a34.crm4.dynamics.com/'
         user-name: ${{ secrets.USERNAME }}
         password-secret: ${{ secrets.password }}
-        solution-file: out/release/CICDSolution_managed.zip
+        solution-file: out/release/CICDSolution.zip
         force-overwrite: true
         publish-changes: true
  
