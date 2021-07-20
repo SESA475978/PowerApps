@@ -1,4 +1,4 @@
-name: Release-solution-to-DEV-QA
+name: Release solution to Quality Environment
 # prepare for releasing to prod:
 #   convert solution to managed (using a build PowerPlatform environment for the conversion)
 #   upload the solution to the GitHub artifacts and deploy to the PROD environment
@@ -9,7 +9,7 @@ on:
     branches: [ main ]
 
 jobs:
-  Deploy_to_DEV_QA:
+  Deploy to UAT:
     runs-on: windows-latest
     environment: UAT
 
