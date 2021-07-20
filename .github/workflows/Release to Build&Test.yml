@@ -9,7 +9,7 @@ on:
     branches: [ main ]
 
 jobs:
-  Deploy to UAT:
+  Deploy_to_UAT:
     runs-on: windows-latest
     environment: UAT
 
