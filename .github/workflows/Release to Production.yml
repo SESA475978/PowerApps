@@ -1,4 +1,4 @@
-name: Release-solution-to-Production
+name: Release to Production
 # prepare for releasing to prod:
 #   convert solution to managed (using a build PowerPlatform environment for the conversion)
 #   upload the solution to the GitHub artifacts and deploy to the PROD environment
@@ -9,7 +9,9 @@ on:
 jobs:
   convert-to-managed:
     runs-on: windows-latest
-    environment: Production
+    env:
+      RUNNER_DEBUG: 1
+
    
     steps:
     - uses: actions/checkout@v2
@@ -32,11 +34,10 @@ jobs:
         name: managedSolutions
         path: out/ship/CICDSolution.zip
 
-  Release-to-PreProduction:
+  Release-to-Production:
     needs: [ convert-to-managed ]
     runs-on: windows-latest
-    env:
-      RUNNER_DEBUG: 1
+    environment: Production
 
     steps:
     - uses: actions/checkout@v2
@@ -49,7 +50,7 @@ jobs:
         name: managedSolutions
         path: out/release/
         
-    - name: Backup Development
+    - name: Backup Production
       uses: microsoft/powerplatform-actions/backup-environment@v0
       with:
         environment-url: 'https://orgec450a34.crm4.dynamics.com/'
