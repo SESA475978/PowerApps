@@ -28,7 +28,7 @@ jobs:
     - name: Backup UAT Environment
       uses: microsoft/powerplatform-actions/backup-environment@v0
       with:
-        environment-url: 'https://https://org8afc7726.crm.dynamics.com/'
+        environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
         app-id: ${{ secrets.APPID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
         tenant-id: ${{ secrets.TENANT_ID }}
@@ -38,7 +38,7 @@ jobs:
     - name: Import solution as unmanaged to UAT
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
-        environment-url: 'https://org8afc7726.crm.dynamics.com/'
+        environment-url: 'https://org01dd3c82.crm4.dynamics.com/'
         app-id: ${{ secrets.APPID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
         tenant-id: ${{ secrets.TENANT_ID }}
