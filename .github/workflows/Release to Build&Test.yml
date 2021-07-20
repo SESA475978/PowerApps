@@ -26,14 +26,14 @@ jobs:
         solution-file: out/solutions/CICDSolution.zip
         solution-type: Unmanaged
         
-   # - name: Backup Development
-    #  uses: microsoft/powerplatform-actions/backup-environment@v0
-     # with:
-     #   environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
-     #   app-id: ${{ secrets.APPID }}
-    #    client-secret: ${{ secrets.CLIENT_SECRET }}
-     #   tenant-id: ${{ secrets.TENANT_ID }}
-    #    backup-label: Backup_before_deploy
+    - name: Backup Development
+      uses: microsoft/powerplatform-actions/backup-environment@v0
+      with:
+        environment-url: 'https://orgd161aeeb.crm4.dynamics.com/'
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
+        backup-label: Backup_before_deploy
 
 
     - name: Import solution as unmanaged to Development
