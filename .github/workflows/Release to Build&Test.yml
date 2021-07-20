@@ -11,8 +11,7 @@ on:
 jobs:
   Deploy_to_DEV_QA:
     runs-on: windows-latest
-    env:
-      RUNNER_DEBUG: 1
+    environment: Development
 
     steps:
     - uses: actions/checkout@v2
