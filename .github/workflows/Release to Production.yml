@@ -9,9 +9,8 @@ on:
 jobs:
   convert-to-managed:
     runs-on: windows-latest
-    env:
-      RUNNER_DEBUG: 1
-
+    environment: Production
+   
     steps:
     - uses: actions/checkout@v2
       with:
