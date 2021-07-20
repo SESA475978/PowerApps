@@ -11,7 +11,7 @@ on:
 jobs:
   Deploy_to_DEV_QA:
     runs-on: windows-latest
-    environment: Development
+    environment: UAT
 
     steps:
     - uses: actions/checkout@v2
