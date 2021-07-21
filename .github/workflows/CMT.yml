@@ -1,0 +1,66 @@
+name: Commit Changes to GitHub
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Commit_Changes:
+    runs-on: windows-latest
+    env:
+      RUNNER_DEBUG: 1
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+        
+        
+    - name: Who-am-i action
+      uses: microsoft/powerplatform-actions/who-am-i@v0
+      with:
+        environment-url: 'https://org8afc7726.crm.dynamics.com/'
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
+        
+    - name: Publish Solution action
+      uses: microsoft/powerplatform-actions/publish-solution@v0
+      with:
+        environment-url: 'https://org8afc7726.crm.dynamics.com/'
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
+        
+    - name: Export-solution action
+      uses: microsoft/powerplatform-actions/export-solution@v0
+      with:
+        environment-url: 'https://org8afc7726.crm.dynamics.com/'
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
+        solution-name: CICDSolution
+        solution-output-file: out/exported/CICDSolution.zip
+                                    
+    - name: Check-solution action
+      uses: microsoft/powerplatform-actions/check-solution@v0
+      with:
+        environment-url: 'https://org8afc7726.crm.dynamics.com/'
+        user-name: ${{ secrets.USERNAME }}
+        password-secret: ${{ secrets.password }}
+        path: out/exported/CICDSolution.zip
+        
+    - name: Un-pack-solution action
+      uses: microsoft/powerplatform-actions/unpack-solution@v0
+      with:
+        solution-file: out/exported/CICDSolution.zip
+        solution-folder: out/solutions/CICDSolution
+        solution-type: 'Unmanaged'
+        overwrite-files: true
+              
+    - name: Branch-solution, prepare it for a PullRequest
+      uses: microsoft/powerplatform-actions/branch-solution@v0
+      with:
+        solution-folder: out/solutions/CICDSolution
+        solution-target-folder: solutions/CICDSolution
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        allow-empty-commit: true
