@@ -4,7 +4,7 @@ name: Release to Production
 #   upload the solution to the GitHub artifacts and deploy to the PROD environment
 
 on:
-  #workflow_dispatch:
+  workflow_dispatch:
   release:
     types: [created]
     
