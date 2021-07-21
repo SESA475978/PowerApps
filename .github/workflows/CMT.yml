@@ -1,4 +1,4 @@
-name: Commit Changes to GitHub
+name: CMT Changes to GitHub
 
 on:
   workflow_dispatch:
