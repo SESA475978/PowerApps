@@ -80,7 +80,10 @@
       </Addresses>
     </Publisher>
     <RootComponents>
+      <RootComponent type="300" schemaName="cr4de_devops_5788d" behavior="0" />
       <RootComponent type="300" schemaName="new_cicd_d7690" behavior="0" />
+      <RootComponent type="300" schemaName="new_soldeploy_d5bc2" behavior="0" />
+      <RootComponent type="300" schemaName="new_wed_d610d" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>
