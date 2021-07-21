@@ -13,6 +13,7 @@ jobs:
     runs-on: windows-latest
     env:
       RUNNER_DEBUG: 1
+      environment: Production
 
    
     steps:
@@ -39,7 +40,8 @@ jobs:
   Release-to-Production:
     needs: [ Convert-to-Managed ]
     runs-on: windows-latest
-    environment: Production
+    env:
+      RUNNER_DEBUG: 1
 
     steps:
     - uses: actions/checkout@v2
