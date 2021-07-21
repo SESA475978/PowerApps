@@ -5,7 +5,9 @@ name: Release to Production
 
 on:
   workflow_dispatch:
-
+  release:
+    types: [created]
+    
 jobs:
   Convert-to-Managed:
     runs-on: windows-latest
