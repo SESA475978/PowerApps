@@ -5,7 +5,7 @@ on:
 
 jobs:
   Commit_Changes:
-    runs-on: windows-latest
+    runs-on: self-hosted
     env:
       RUNNER_DEBUG: 1
 
