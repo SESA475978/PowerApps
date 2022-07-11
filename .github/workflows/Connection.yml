@@ -1,0 +1,38 @@
+name: Connection
+#Export Solution from DEV environment, Branch the exported solution, Export it to PRE-PRODUCTION
+
+on:
+  workflow_dispatch:
+       
+#Source and Destination Envirnoment Details
+env:
+  #envirnoments
+  SOURCE_ENV_NAME: Development
+  SOURCE_ENV_URL: ${{ secrets.DEVELOPMENT }}
+  TARGET_ENV_NAME: UAT
+  TARGET_ENV_URL: ${{ secrets.UAT }}
+
+  #soluitons
+  CUSTOMIZATION: Gitactiondemo
+  TABLES: MGD
+  
+#Export, Branch Solution and prepare it for PRE-PRODUCTION deployement
+
+jobs:
+  Check-Connection:
+    runs-on: windows-latest
+    env:
+      RUNNER_DEBUG: 1
+          
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+   
+    - name: Connecting to -${{env.SOURCE_ENV_NAME}} 
+      uses: microsoft/powerplatform-actions/who-am-i@v0.7.1
+      with:
+        environment-url: ${{env.SOURCE_ENV_URL}}
+        app-id: ${{ secrets.APPID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{ secrets.TENANT_ID }}
