@@ -19,7 +19,7 @@ jobs:
       uses: microsoft/powerplatform-actions/who-am-i@v0
       with:
         environment-url: https://org8afc7726.crm.dynamics.com/
-        app-id: 41098e32-fccf-4145-b353-f40f2a917b16
-        client-secret: CEe5HsWm7Rcr2sCQ3puQ87aZty4kE5Iq
+        app-id: 1024ef8d-d1ca-4923-8d57-4e9e415ff4b3
+        client-secret: UUL8Q~KAj_sNTFzbhTj23HZHRFVVH6Bo35iW9dfQ
         tenant-id: c1d0b961-f301-4256-b2ec-6e9efa04d80b
         
